@@ -34,15 +34,13 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.2'
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
     compileOnly 'org.greenrobot:eventbus:3.1.1'
-
-    implementation ('cn.yipianfengye.android:zxing-library:2.2')
+    implementation 'cn.yipianfengye.android:zxing-library:2.2'
     implementation 'in.srain.cube:ultra-ptr:1.0.11'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
     // 上拉刷新组件
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
-    implementation files('libs/Leto-1.7.1.jar')
+    implementation files('libs/Leto-1.8.0.jar')
 }
