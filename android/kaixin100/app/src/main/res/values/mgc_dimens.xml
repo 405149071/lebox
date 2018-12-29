@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="action_bar_height">54dp</dimen>
+
+    <!--字体大小-->
+    <dimen name="text_title">18sp</dimen>
+    <dimen name="text_content">14sp</dimen>
+    <dimen name="text_hint">12sp</dimen>
+    <dimen name="text_normal">16sp</dimen>
+
+    <dimen name="padding">12dp</dimen>
+    <dimen name="padding16">16dp</dimen>
+    <dimen name="padding5">5dp</dimen>
+    <dimen name="list_item_height">45dp</dimen>
+    <dimen name="line_height">0.8dp</dimen>
+    <dimen name="input_height">50dp</dimen>
+
+
+    <dimen name="wallet_redpacket_row_height">100dp</dimen>
+
+    <dimen name="redpacket_row_height">64dp</dimen>
+    <dimen name="redpacket_btn_height">48dp</dimen>
+
+    <dimen name="dialog_btn_height">48dp</dimen>
+    <dimen name="dialog_edit_height">48dp</dimen>
+
+
+    <dimen name="match_10">10dp</dimen>
+    <dimen name="match_12">12dp</dimen>
+    <dimen name="match_15">15dp</dimen>
+    <dimen name="match_20">20dp</dimen>
+    <dimen name="match_30">30dp</dimen>
+    <dimen name="match_40">40dp</dimen>
+
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_24sp">24sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_10sp">10sp</dimen>
+
+
+    <dimen name="btn_height">48dp</dimen>
+
+
+    <dimen name="setting_password_magin">20dp</dimen>
+
+    <dimen name="gametrade_detail_row_height">48dp</dimen>
+
+    <dimen name="trade_tab_height">48dp</dimen>
+
+
+</resources>

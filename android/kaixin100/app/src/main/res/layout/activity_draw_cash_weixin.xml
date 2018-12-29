@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <com.mgc.letobox.happy.ui.TranslucentScrollView
+        android:id="@+id/translucentScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_header"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/title_bg_color">
+
+                <com.ledong.lib.minigame.view.RoundedImageView
+                    android:id="@+id/avatar_view"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="87dp"
+                    android:src="@mipmap/default_avatar"
+                    android:scaleType="fitXY"
+                    app:riv_border_color="#8b2af3"
+                    app:riv_border_width="1dp"
+                    app:riv_corner_radius="26dp"
+                    app:riv_mutate_background="false"
+                    app:riv_oval="false" />
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/avatar_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/match_10"
+                    android:text="昵称"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/in_amount"
+                layout="@layout/draw_cash_layout_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/match_10" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_common"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提现的金额会打款到您的微信钱包(零钱)里"
+                android:textSize="12sp"
+                android:textColor="@color/text_lowgray"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="@dimen/match_10"
+                />
+
+
+            <View
+                android:layout_marginTop="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/bg_common" />
+
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:background="@drawable/shape_circle_rect_white_with_gray_stroke"
+                android:hint="请输入您的姓名"
+                android:textColorHint="#bbbbbb"
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:maxLines="1"/>
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/drawcash_btn_selector"
+                android:text="立即提现"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+    </com.mgc.letobox.happy.ui.TranslucentScrollView>
+
+    <com.mgc.letobox.happy.ui.TranslucentActionBar
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tranparent" />
+
+</RelativeLayout>

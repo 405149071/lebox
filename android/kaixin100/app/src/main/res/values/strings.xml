@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">开心小游戏中心</string>
+    <string name="open_page_for_result">openPageForResult示例</string>
+    <string name="set_result">返回页面结果</string>
+
+
+    <string name="dialog_button_ok">确定</string>
+    <string name="dialog_button_cancel">取消</string>
+
+
+
+    <string name="login_sweets_title">欢迎来到梦工厂游戏钱包</string>
+    <string name="login_sweets_title2">用户首次登录奖励</string>
+    <string name="login_sweets_title3">——— 快拆开看看吧！ ———</string>
+
+    <string name="login_sweets_open_title">您已成功领取%1$sTT糖果，可以直接 在游戏里面消费哦！快去看看有没有你喜欢的游戏～</string>
+    <string name="login_sweets_open_btn">分享给好友</string>
+
+    <string name="profile_level_hint">注：100TT糖果=1元</string>
+    <string name="profile_level_desc">当前用户等级共分为7档，统计单个账号累计充值总额与累计消耗TT糖果总额之和，满足升级要求后自动升级。</string>
+    <string name="profile_desc_label">用户等级：</string>
+
+
+    <string name="mgc_sdk_lucky_readme">领奖说明：请至[我的奖品]内查看领取。</string>
+
+    <string name="gt_history_product_id">商品编号：</string>
+
+
+    <string name="redpacket_detail_title">红包详情</string>
+    <string name="redpacket_detail_receive">已领取</string>
+    <string name="redpacket_detail_share">将红包分享给好友</string>
+    <string name="redpacket_set_list_title">已配置红包</string>
+
+    <string name="redpacket_share_dialog_content">总价值%1$s%2$s的%3$s个红包已经配好，请分享给好友！</string>
+    <string name="redpacket_share_diaog_hint">可在已有红包页查看领取详情</string>
+    <string name="redpacket_share_diaog_button">将红包分享给好友</string>
+    <string name="redpacket_token_list_title">选择币种</string>
+
+    <string name="redpacket_verify_dialog_phone_hint">手机号</string>
+    <string name="redpacket_verify_dialog_code_hint">请输入验证码</string>
+    <string name="redpacket_verify_dialog_send_button">获取</string>
+    <string name="redpacket_verify_dialog_ok_button">确定</string>
+
+
+    <string name="redpacket_check_dialog_title">发红包</string>
+    <string name="redpacket_check_dialog_button">确定</string>
+
+    <string name="share_picture_text">你玩游戏，我花钱！一起游戏，一起挖矿 </string>
+    <string name="share_qrcode_hint">长按识别二维码 </string>
+
+
+
+</resources>

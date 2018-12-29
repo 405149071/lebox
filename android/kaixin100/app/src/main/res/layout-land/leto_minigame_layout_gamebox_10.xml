@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <com.ledong.lib.minigame.view.GameBoxView
+            android:id="@+id/game_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="108"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            android:layout_marginStart="@dimen/collection_padding"
+            android:orientation="vertical">
+
+            <com.ledong.lib.minigame.view.GameBoxView
+                android:id="@+id/game_2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                />
+
+            <com.ledong.lib.minigame.view.GameBoxView
+                android:id="@+id/game_3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/collection_padding"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/collection_padding"
+            android:layout_weight="40"
+            android:orientation="vertical">
+
+            <com.ledong.lib.minigame.view.GameBoxView
+                android:id="@+id/game_4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                 />
+
+            <com.ledong.lib.minigame.view.GameBoxView
+                android:id="@+id/game_5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/collection_padding"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                 />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/collection_padding"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="74">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.ledong.lib.minigame.view.GameBoxView
+                    android:id="@+id/game_6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                     />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/collection_padding"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.ledong.lib.minigame.view.GameBoxView
+                    android:id="@+id/game_7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                     />
+
+                <com.ledong.lib.minigame.view.GameBoxView
+                    android:id="@+id/game_8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/collection_padding"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                     />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <com.ledong.lib.minigame.view.GameBoxView
+            android:id="@+id/game_9"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/collection_padding"
+            android:layout_weight="74"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+             />
+
+        <com.ledong.lib.minigame.view.GameBoxView
+            android:id="@+id/game_10"
+            android:layout_weight="40"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/collection_padding"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+

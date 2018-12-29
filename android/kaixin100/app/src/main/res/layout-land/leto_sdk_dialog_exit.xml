@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:id="@+id/mgc_sdk_ll_loginLogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            >
+
+            <ImageView
+                android:id="@+id/mgc_sdk_iv_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:src="@drawable/leto_minigame_logo" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/mgc_sdk_ll_loginInput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:orientation="vertical"
+            android:background="@drawable/leto_mgc_sdk_login_dialog_bg"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:text="建议收藏游戏，以便下次进入！"
+                android:textColor="@color/mgc_sdk_text_blacks"
+                android:textSize="16sp"
+                android:autoLink="all"
+                />
+
+
+            <Button
+                android:id="@+id/mgc_sdk_btn_favorite_exit"
+                android:layout_width="match_parent"
+                android:layout_height="48dip"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@id/mgc_sdk_ll_loginInput"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/leto_sdk_login_btn_login"
+                android:gravity="center"
+                android:text="收藏并退出"
+                android:textColor="@android:color/white"
+                android:textSize="16dip" />
+
+            <TextView
+                android:id="@+id/mgc_sdk_btn_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:text="残忍退出"
+                android:textColor="@color/mgc_sdk_green"
+                android:textSize="14sp"
+                android:autoLink="all"
+                android:layout_marginBottom="20dp"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

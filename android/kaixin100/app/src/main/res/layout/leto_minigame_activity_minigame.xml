@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mgc_sdk_white"
+    android:orientation="vertical">
+
+    <!--<View-->
+    <!--android:id="@+id/fake_status_bar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/statusbar_view_height"-->
+    <!--android:background="@color/white" />-->
+
+    <!--<include layout="@layout/leto_minigame_include_common_header" />-->
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mgc_sdk_action_bar_height"
+        android:id="@+id/rl_title"
+        android:background="@color/mgc_sdk_white">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/leto_minigame_back_pressed" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mgc_sdk_text_blacks"
+            android:gravity="center"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:drawableStart="@drawable/leto_minigame_title_slogan"/>
+
+        <LinearLayout
+            android:id="@+id/ll_clear_cache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/leto_minigame_btn_clear_cache_selector">
+
+            <TextView
+                android:id="@+id/tv_clear_cache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:padding="4dp"
+                android:textColor="#666666"
+                android:textSize="10sp"
+                android:text="@string/leto_minigame_clear_cache"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f0f0f0"></LinearLayout>
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:layout_marginBottom="7dp">
+
+    </ListView>
+
+</LinearLayout>

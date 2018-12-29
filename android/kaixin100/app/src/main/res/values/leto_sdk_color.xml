@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="leto_btn_stroke">#80ffffff</color>
+
+    <color name="mgc_sdk_login_bg_translucence_black">#b0000000</color>
+    <color name="mgc_sdk_gray_d8">#d8d8d8</color>
+    <color name="mgc_sdk_blues">#4c6791</color>
+    <color name="mgc_sdk_text_blacks">#333333</color>
+    <color name="mgc_sdk_grayc3">#C3C3C3</color>
+    <color name="mgc_sdk_black2a">#2A2A2A</color>
+    <color name="mgc_sdk_orange">#FF8400</color>
+    <color name="mgc_sdk_gray7f">#7F7C7C</color>
+    <color name="mgc_sdk_green">#00d2e1</color>
+    <color name="mgc_sdk_bluef8">#2475f8</color>
+    <color name="mgc_sdk_blue_load">#5172e1</color>
+    <color name="mgc_sdk_blue3e">#3e4fb7</color>
+    <color name="mgc_sdk_bluef5">#4d70f5</color>
+    <color name="mgc_sdk_black">#000000</color>
+    <color name="mgc_sdk_black2">#666666</color>
+    <color name="mgc_sdk_white">#ffffff</color>
+    <color name="mgc_sdk_red">#ff0000</color>
+    <color name="mgc_sdk_yellow_d2">#f6c844</color>
+    <color name="mgc_sdk_popup_bg_translucence">#b9999999</color>
+    <color name="mgc_sdk_black_3">#333333</color>
+
+
+
+    <color name="mgc_sdk_text_lowgray">#999999</color>
+    <color name="mgc_sdk_bg_gray">#eeeeee</color>
+    <color name="mgc_sdk_bg_silver_gray">#f3f4f9</color>
+    <color name="mgc_sdk_bg_blue">#264ac3</color>
+    <color name="mgc_sdk_greenss">#00c3ba</color>
+    <color name="mgc_sdk_blue3">#21A6EF</color>
+    <color name="mgc_sdk_gray_white">#F8F8F8</color>
+
+
+
+    <color name="leto_picker_pager_bg">#CA000000</color>
+    <color name="leto_picker_selected_bg">#44000000</color>
+    <color name="leto_picker_black_40">#282828</color>
+    <color name="leto_picker_common_primary">#f3f3f3</color>
+
+    <color name="leto_picker_text_40">#282828</color>
+    <color name="leto_picker_text_80">#505050</color>
+    <color name="leto_picker_text_120">#787878</color>
+    <color name="leto_picker_item_photo_border_selected">#ff99cc00</color>
+    <color name="leto_picker_item_photo_border_n">#33ffffff</color>
+
+
+
+</resources>

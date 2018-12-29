@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="tab_bar_padding_l">15dp</dimen>
+    <dimen name="tab_bar_padding_s">5dp</dimen>
+    <dimen name="tab_bar_text_size_l">16sp</dimen>
+    <dimen name="tab_bar_text_size_s">12sp</dimen>
+
+    <dimen name="action_sheet_item_lr_padding">20dp</dimen>
+    <dimen name="action_sheet_item_tb_padding">15dp</dimen>
+    <dimen name="action_sheet_item_text_size">14sp</dimen>
+
+    <dimen name="statusbar_view_height">0dp</dimen>
+    <dimen name="titile_bar_height">54dp</dimen>
+    <dimen name="mgc_sdk_action_bar_height">54dp</dimen>
+
+    <dimen name="mgc_sdk_activity_horizontal_margin">20dp</dimen>
+
+    <dimen name="mgc_sdk_float_view_height">48dp</dimen>
+    <dimen name="mgc_sdk_float_btn_up_padding">8dp</dimen>
+    <dimen name="mgc_sdk_float_version_padding_top_bottom">6dp</dimen>
+    <dimen name="mgc_sdk_float_btn_height">32dp</dimen>
+    <dimen name="mgc_sdk_float_marin_padding">14dp</dimen>
+    <dimen name="mgc_sdk_text_list_font">14sp</dimen>
+    <dimen name="mgc_sdk_text_list_control_font">18dp</dimen>
+    <dimen name="mgc_sdk_float_max_font">16sp</dimen>
+    <dimen name="mgc_sdk_float_normal_font">12sp</dimen>
+    <dimen name="mgc_sdk_float_normal_two_font">14sp</dimen>
+    <dimen name="mgc_sdk_float_min_font">9sp</dimen>
+    <dimen name="mgc_sdk_float_list_line_height">48dp</dimen>
+
+
+    <dimen name="progressbar_radiu">2dp</dimen>
+    <dimen name="collection_padding">4dp</dimen>
+
+    <dimen name="leto_minigame_more_btn_height">28dp</dimen>
+    <dimen name="leto_minigame_more_btn_radiu">14dp</dimen>
+
+    <dimen name="leto_picker_iwf_actionBarSize">48dip</dimen>
+    <dimen name="leto_picker_item_photo_size">80dip</dimen>
+    <dimen name="leto_picker_item_camera_size">80dip</dimen>
+    <dimen name="leto_picker_item_directory_height">80dp</dimen>
+
+
+</resources>

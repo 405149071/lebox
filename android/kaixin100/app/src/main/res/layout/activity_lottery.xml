@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:wheelSurfView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.mgc.letobox.happy.ui.TranslucentScrollView
+        android:id="@+id/translucentScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/lucky_background"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="180dp">
+
+                <!--自定义方式-->
+                <com.mgc.letobox.happy.ui.lottery.view.WheelSurfView
+                    android:id="@+id/mLotteryDisk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    wheelSurfView:minTimes="3"
+                    wheelSurfView:typenum="-1"
+                    wheelSurfView:vartime="75" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/match_30"
+                android:layout_marginStart="@dimen/match_30"
+                android:layout_marginTop="3dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="10sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_my_record"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/lucky_my_record_btn"
+                        android:gravity="center"
+                        android:text="我的奖品"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/match_10"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="邀请成功+300TT糖果"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_share"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/lucky_share_btn"
+                        android:gravity="center"
+                        android:text="分享好友"
+                        android:textColor="#feffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/match_30"
+                android:layout_marginStart="@dimen/match_30"
+                android:layout_marginTop="@dimen/match_20"
+                android:background="@drawable/lucky_background"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_record_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:id="@+id/tv_reward_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="—— 中奖记录 ——"
+                        android:textColor="#ddffff"
+                        android:textSize="17sp" />
+
+
+                </RelativeLayout>
+
+                <com.mgc.letobox.happy.walfare.lucky.SmoothScrollLayout
+                    android:id="@+id/smoothScrollLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_record_title"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/match_30"
+                android:layout_marginEnd="@dimen/match_30"
+                android:layout_marginStart="@dimen/match_30"
+                android:layout_marginTop="@dimen/match_10"
+                android:text="@string/mgc_sdk_lucky_readme"
+                android:textColor="#d4dafe"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </com.mgc.letobox.happy.ui.TranslucentScrollView>
+
+    <com.mgc.letobox.happy.ui.TranslucentActionBar
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tranparent" />
+
+</RelativeLayout>

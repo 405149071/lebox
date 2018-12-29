@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_cover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <com.ledong.lib.minigame.view.RoundedImageView
+            android:id="@+id/image_view"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="12dp"
+            android:scaleType="fitXY"
+            app:riv_corner_radius="8dp"
+            app:riv_mutate_background="false"
+            app:riv_oval="false" />
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="22dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/leto_minigame_hot"/>
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:textSize="12sp"
+        android:text="游戏1"
+        android:textColor="#333333"/>
+
+    <TextView
+        android:id="@+id/tv_play_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        />
+
+    <com.ledong.lib.minigame.view.ProgessView
+        android:id="@+id/pb_download"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/leto_minigame_btn_download_blue" />
+</LinearLayout>

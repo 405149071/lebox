@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:layout_alignParentBottom="true">
+
+
+    <FrameLayout
+        android:id="@+id/fl_transmit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:text="转发" />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_add_desktop"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:text="添加到桌面" />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:text="取消" />
+    </FrameLayout>
+</LinearLayout>

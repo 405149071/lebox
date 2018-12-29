@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mgc_sdk_ll_fast_login"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_marginLeft="@dimen/mgc_sdk_activity_horizontal_margin"
+    android:layout_marginRight="@dimen/mgc_sdk_activity_horizontal_margin"
+    android:background="@drawable/leto_sdk_sdk_spalns_login"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="45dip"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/leto_sdk_sdk_spalns_login"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/mgc_sdk_iv_fastLoading"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/mgc_sdk_xs_loading"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dip"
+            android:layout_alignBottom="@+id/mgc_sdk_iv_fastLoading"
+            android:layout_marginLeft="14dp"
+            android:layout_toRightOf="@+id/mgc_sdk_iv_fastLoading"
+            android:gravity="center"
+            android:text="正在登录"
+            android:textColor="@color/mgc_sdk_blue_load"
+            android:textSize="15dip" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/mgc_sdk_tv_fastUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:shadowDx="5"
+            android:maxLength="18"
+            android:shadowDy="5"
+            android:shadowRadius="10"
+            android:text="13148984056"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="，欢迎回来"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/mgc_sdk_tv_fastChangeCount"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/leto_sdk_sdk_registe_in"
+        android:gravity="center"
+        android:text="切换账号"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+</LinearLayout>
