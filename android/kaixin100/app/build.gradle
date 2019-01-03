@@ -7,7 +7,7 @@ android {
         minSdkVersion 18
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
         multiDexEnabled true
     }
     buildTypes {
@@ -21,6 +21,14 @@ android {
         // Or, if you prefer, you can continue to check for errors in release builds,
         // but continue the build even when errors are found:
         abortOnError false
+    }
+    signingConfigs{
+        debug {
+            storeFile file('../happy')
+            storePassword "Tiantian1234"
+            keyAlias "happy"
+            keyPassword "Tiantian1234"
+        }
     }
 }
 

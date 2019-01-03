@@ -36,7 +36,8 @@
         android:theme="@style/AppTheme"
         tools:replace="android:theme">
 
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,10 +45,13 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="mgc.game.box"
-                    android:host="mgc.com"/>
+
+                <data
+                    android:host="mgc.com"
+                    android:scheme="mgc.game.box" />
             </intent-filter>
         </activity>
 
@@ -129,8 +133,6 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
 
-
-
         <!-- Start -->
         <!-- 梦工厂小游戏平台Leto相关组件申明  开始部分  -->
         <activity
@@ -139,7 +141,7 @@
             android:launchMode="singleTask"
             android:process=":leto"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
             android:name="com.ledong.lib.minigame.MiniMoreActivity"
@@ -147,27 +149,26 @@
             android:launchMode="singleTask"
             android:process=":leto"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <service android:name="com.ledong.lib.leto.remote.HostApiService" />
         <service
             android:name="com.ledong.lib.leto.main.LetoService"
             android:process=":leto"
             android:screenOrientation="portrait" />
+
         <activity
             android:name="com.ledong.lib.leto.main.LetoActivity"
             android:exported="true"
             android:process=":leto"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="com.ledong.lib.leto.main.WebPayActivity"
             android:exported="true"
             android:process=":leto"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <!-- 适配android N 的文件系统，authorities 中注意替换您的包名，包名+".fileprovider" -->
         <provider
@@ -192,30 +193,30 @@
 
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
-            tools:replace="android:screenOrientation"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
+            android:process=":leto"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="adjustResize|stateHidden"
-            android:process=":leto"/>
+            tools:replace="android:screenOrientation" />
         <activity
             android:name="com.ipaynow.plugin.presenter.PayMethodActivity"
-            tools:replace="android:screenOrientation"
             android:configChanges="keyboardHidden|navigation|orientation|screenSize"
             android:exported="false"
+            android:process=":leto"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:process=":leto"/>
+            tools:replace="android:screenOrientation" />
         <activity
             android:name="com.ipaynow.plugin.inner_plugin.wechatwp.activity.WeChatNotifyActivity"
-            tools:replace="android:screenOrientation"
             android:configChanges="keyboardHidden|navigation|orientation|screenSize"
             android:exported="false"
             android:launchMode="singleTop"
+            android:process=":leto"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:process=":leto"/>
+            tools:replace="android:screenOrientation" />
 
 
         <!-- 梦工厂小游戏平台Leto相关组件申明  结束部分   -->
@@ -224,11 +225,22 @@
         <meta-data
             android:name="MGC_APPID"
             android:value="364063" />
-
+        <!-- 渠道注册的微信分享APP信息，请到微信开放平台注册申请 -->
+        <!-- 渠道自带的微信分享集成 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <meta-data
+            android:name="MGC_WECHAT_APPID"
+            android:value="wx2b06b06ae8f615c8" />
+        <meta-data
+            android:name="MGC_WECHAT_APPSECRET"
+            android:value="7e0fdc7309652508e160ae2a8e3f12b1" />
         <!--梦工厂小游戏配置 结束部分 -->
 
         <!-- End -->
-
 
 
     </application>

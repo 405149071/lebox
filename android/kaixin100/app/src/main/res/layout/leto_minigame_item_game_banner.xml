@@ -12,7 +12,10 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_width="match_parent"
-        android:layout_height="144dp" />
+        android:layout_height="144dp"
+        app:indicator_drawable_selected="@drawable/mgc_banner_white_radius"
+        app:indicator_drawable_unselected="@drawable/mgc_banner_gray_radius"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
