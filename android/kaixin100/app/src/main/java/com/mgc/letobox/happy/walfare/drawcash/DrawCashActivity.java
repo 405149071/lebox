@@ -27,6 +27,7 @@ import com.mgc.letobox.happy.domain.TTResultBean;
 import com.mgc.letobox.happy.util.GsonUtil;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareConfig;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 
 import java.util.Map;
@@ -287,7 +288,11 @@ public class DrawCashActivity extends BaseActivity implements View.OnClickListen
             }
         };
 
+        UMShareConfig config = new UMShareConfig();
+        config.isNeedAuthOnGetUserInfo(true);
+
         UMShareAPI umShareAPI = UMShareAPI.get(DrawCashActivity.this);
+        umShareAPI.setShareConfig(config);
 
         umShareAPI.getPlatformInfo(DrawCashActivity.this, SHARE_MEDIA.WEIXIN, authListener);
     }
