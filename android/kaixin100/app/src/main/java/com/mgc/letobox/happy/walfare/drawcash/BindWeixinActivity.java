@@ -224,6 +224,9 @@ public class BindWeixinActivity extends BaseActivity implements View.OnClickList
             @Override
             public void onFailure(String code, String msg) {
                 super.onFailure(code, msg);
+                if (!BindWeixinActivity.this.isDestroyed()) {
+                    T.s(BindWeixinActivity.this, msg);
+                }
             }
         };
         httpCallbackDecode.setShowTs(false);

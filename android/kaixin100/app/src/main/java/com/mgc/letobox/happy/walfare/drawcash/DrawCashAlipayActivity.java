@@ -60,6 +60,11 @@ public class DrawCashAlipayActivity extends BaseActivity implements View.OnClick
     @BindView(R.id.tv_value)
     TextView tv_value;
 
+    @BindView(R.id.tv_point_title)
+    TextView tv_point_title;
+    @BindView(R.id.tv_point_content)
+    TextView tv_point_content;
+
     @BindView(R.id.et_account)
     EditText et_account;
 
@@ -115,12 +120,11 @@ public class DrawCashAlipayActivity extends BaseActivity implements View.OnClick
         }
 
         initView();
-        getOrderStatus();
     }
 
 
     private void initView(){
-        tv_title.setText("支付宝");
+        tv_title.setText("支付宝提现");
         rl_left.setOnClickListener(this);
         iv_right.setVisibility(View.VISIBLE);
         iv_right.setImageResource(R.mipmap.ic_question);
@@ -132,6 +136,7 @@ public class DrawCashAlipayActivity extends BaseActivity implements View.OnClick
         }
         et_name.setEnabled(false);
         et_name.setText(mAlipayInfo.getTruename());
+        et_name.setVisibility(View.GONE);
         et_account.setText(mAlipayInfo.getAccount());
         et_account.setEnabled(false);
 
@@ -173,6 +178,9 @@ public class DrawCashAlipayActivity extends BaseActivity implements View.OnClick
                 if(mChargePoint.getBalance_rmb()>=real_amount) {
                     tv_value.setText("" + real_amount + "元");
                     amount = (int) mList.get(position).getAmount();
+
+                    tv_point_title.setText(mList.get(position).title);
+                    tv_point_content.setText(mList.get(position).content);
 
                     List<ChargePoint.Point> points = adapter.getData();
                     for (int i = 0; i < points.size(); i++) {
@@ -263,9 +271,6 @@ public class DrawCashAlipayActivity extends BaseActivity implements View.OnClick
             @Override
             public void onDataSuccess(String data) {
                 T.s(DrawCashAlipayActivity.this, "提现申请成功");
-                btn_ok.setEnabled(false);
-                btn_ok.setText("请明日提现");
-
                 DrawCashHistoryActivity.start(DrawCashAlipayActivity.this);
                 finish();
             }
@@ -278,53 +283,15 @@ public class DrawCashAlipayActivity extends BaseActivity implements View.OnClick
             @Override
             public void onFailure(String code, String msg) {
                 super.onFailure(code, msg);
-                T.s(DrawCashAlipayActivity.this, msg);
+                if (!DrawCashAlipayActivity.this.isDestroyed()) {
+                    T.s(DrawCashAlipayActivity.this, msg);
+                }
             }
         };
         httpCallbackDecode.setShowTs(true);
         httpCallbackDecode.setLoadingCancel(false);
         httpCallbackDecode.setShowLoading(true);
         RxVolley.post(SdkApi.getDrawCashApply(), httpParamsBuild.getHttpParams(), httpCallbackDecode);
-    }
-
-
-
-    /**
-     * 获得订单状态
-     */
-    private void getOrderStatus() {
-        DrawCashApplyRequestBean requestBean = new DrawCashApplyRequestBean();
-        requestBean.setType(1);
-        HttpParamsBuild httpParamsBuild = new HttpParamsBuild(GsonUtil.getGson().toJson(requestBean));
-        HttpCallbackDecode httpCallbackDecode = new HttpCallbackDecode<DrawCashOrderInfoResultBean>(mContext, httpParamsBuild.getAuthkey()) {
-            @Override
-            public void onDataSuccess(DrawCashOrderInfoResultBean data) {
-                if(data.getIs_draw()==1){
-                    btn_ok.setEnabled(false);
-                    btn_ok.setText("待审核");
-                }else if(data.getIs_draw()==2){
-                    btn_ok.setEnabled(false);
-                    btn_ok.setText("请明日提现");
-                }else{
-                    btn_ok.setEnabled(true);
-                }
-            }
-
-            @Override
-            public void onFinish() {
-                super.onFinish();
-            }
-
-            @Override
-            public void onFailure(String code, String msg) {
-                super.onFailure(code, msg);
-                T.s(DrawCashAlipayActivity.this, msg);
-            }
-        };
-        httpCallbackDecode.setShowTs(false);
-        httpCallbackDecode.setLoadingCancel(false);
-        httpCallbackDecode.setShowLoading(false);
-        RxVolley.post(SdkApi.getDrawCashStatus(), httpParamsBuild.getHttpParams(), httpCallbackDecode);
     }
 
 

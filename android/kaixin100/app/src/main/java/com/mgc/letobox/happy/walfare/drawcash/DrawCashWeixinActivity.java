@@ -60,6 +60,12 @@ public class DrawCashWeixinActivity extends BaseActivity implements View.OnClick
     @BindView(R.id.tv_nickname)
     TextView tv_nickname;
 
+    @BindView(R.id.tv_point_title)
+    TextView tv_point_title;
+    @BindView(R.id.tv_point_content)
+    TextView tv_point_content;
+
+
     @BindView(R.id.et_name)
     EditText et_name;
 
@@ -117,7 +123,6 @@ public class DrawCashWeixinActivity extends BaseActivity implements View.OnClick
         }
 
         initView();
-        getOrderStatus();
     }
 
     private void initView() {
@@ -125,6 +130,7 @@ public class DrawCashWeixinActivity extends BaseActivity implements View.OnClick
         tv_balance.setText("" + mWeixinInfo.getChargePoint().getBalance_rmb());
         et_name.setEnabled(false);
         et_name.setText(mWeixinInfo.getTruename());
+        et_name.setVisibility(View.GONE);
         tv_nickname.setText(mWeixinInfo.getNickname());
         btn_ok.setOnClickListener(this);
 
@@ -166,6 +172,9 @@ public class DrawCashWeixinActivity extends BaseActivity implements View.OnClick
                     tv_value.setText("" + real_amount + "元");
                     amount = (int) mList.get(position).getAmount();
 
+                    tv_point_title.setText(mList.get(position).title);
+                    tv_point_content.setText(mList.get(position).content);
+
                     List<ChargePoint.Point> points = adapter.getData();
                     for (int i = 0; i < points.size(); i++) {
                         if (i == position) {
@@ -193,8 +202,8 @@ public class DrawCashWeixinActivity extends BaseActivity implements View.OnClick
             @Override
             public void onDataSuccess(List<TaskListReponse> data) {
                 T.s(DrawCashWeixinActivity.this, "提现申请成功");
-                btn_ok.setEnabled(false);
-                btn_ok.setText("请明日提现");
+                DrawCashHistoryActivity.start(DrawCashWeixinActivity.this);
+                finish();
             }
 
             @Override
@@ -274,48 +283,4 @@ public class DrawCashWeixinActivity extends BaseActivity implements View.OnClick
         //设置ActionBar键渐变颜色
         sv_content.setTransColor(getResources().getColor(R.color.mgc_sdk_bg_blue));
     }
-
-
-    /**
-     * 获得订单状态
-     */
-    private void getOrderStatus() {
-        DrawCashApplyRequestBean requestBean = new DrawCashApplyRequestBean();
-        requestBean.setType(1);
-        HttpParamsBuild httpParamsBuild = new HttpParamsBuild(GsonUtil.getGson().toJson(requestBean));
-        HttpCallbackDecode httpCallbackDecode = new HttpCallbackDecode<DrawCashOrderInfoResultBean>(mContext, httpParamsBuild.getAuthkey()) {
-            @Override
-            public void onDataSuccess(DrawCashOrderInfoResultBean data) {
-                if (null != btn_ok) {
-                    if (data.getIs_draw() == 1) {
-                        btn_ok.setEnabled(false);
-                        btn_ok.setText("待审核");
-                    } else if (data.getIs_draw() == 2) {
-                        btn_ok.setEnabled(false);
-                        btn_ok.setText("请明日提现");
-                    } else {
-                        btn_ok.setEnabled(true);
-                    }
-                }
-            }
-
-            @Override
-            public void onFinish() {
-                super.onFinish();
-            }
-
-            @Override
-            public void onFailure(String code, String msg) {
-                super.onFailure(code, msg);
-                if (DrawCashWeixinActivity.this != null && !DrawCashWeixinActivity.this.isDestroyed()) {
-                    T.s(DrawCashWeixinActivity.this, msg);
-                }
-            }
-        };
-        httpCallbackDecode.setShowTs(false);
-        httpCallbackDecode.setLoadingCancel(false);
-        httpCallbackDecode.setShowLoading(false);
-        RxVolley.post(SdkApi.getDrawCashStatus(), httpParamsBuild.getHttpParams(), httpCallbackDecode);
-    }
-
 }

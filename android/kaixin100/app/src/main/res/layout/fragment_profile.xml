@@ -83,7 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="零钱"
+                    android:text="零钱(元)"
                     android:textColor="@color/mgc_sdk_gray_d8"
                     android:textSize="12sp" />
 

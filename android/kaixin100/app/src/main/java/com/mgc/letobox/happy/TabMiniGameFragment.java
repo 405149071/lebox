@@ -33,7 +33,7 @@ import butterknife.BindView;
  * Created by DELL on 2018/8/4.
  */
 
-public class TabMiniGameFragment extends AutoLazyFragment implements IGameSwitchListener{
+public class TabMiniGameFragment extends AutoLazyFragment implements IGameSwitchListener {
 
     @BindView(R.id.iv_back)
     ImageView iv_back;
@@ -61,6 +61,7 @@ public class TabMiniGameFragment extends AutoLazyFragment implements IGameSwitch
         super.onCreate(savedInstanceState);
 
     }
+
     @Override
     protected void onCreateViewLazy(Bundle savedInstanceState) {
         super.onCreateViewLazy(savedInstanceState);
@@ -145,7 +146,9 @@ public class TabMiniGameFragment extends AutoLazyFragment implements IGameSwitch
 
             @Override
             public void onFailure(String code, String msg) {
-                T.s(getActivity(), msg);
+                if (null != getActivity() && !getActivity().isDestroyed()) {
+                    T.s(getActivity(), msg);
+                }
             }
 
             @Override
@@ -162,7 +165,7 @@ public class TabMiniGameFragment extends AutoLazyFragment implements IGameSwitch
 
     private void updateListView(MinigameResultBean data) {
         if (null == data || null == data.getGames()) {
-            return ;
+            return;
         }
         MinigameAdapter adapter = new MinigameAdapter(getActivity(), data, this);
         listView.setAdapter(adapter);
@@ -197,9 +200,9 @@ public class TabMiniGameFragment extends AutoLazyFragment implements IGameSwitch
         if (null == MiniGameManager.getInstance()) {
             MiniGameManager.init(this.getApplicationContext());
         }
-        if(game_type==10){
+        if (game_type == 10) {
             WebViewActivity.start(getContext(), "小说", package_url, 4, 1, appId, LetoApplication.getInstance().getAppId());
-        }else {
+        } else {
             MiniGameManager.getInstance().startGame(getContext(), LetoApplication.getInstance().getAppId(), "", appId, appPath,
                     isBigGame, url, packageName, gameName, isCps, splashPic, is_kp_ad, is_more, icon, share_url, share_msg);
 

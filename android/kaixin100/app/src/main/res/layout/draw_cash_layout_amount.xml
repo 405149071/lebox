@@ -46,9 +46,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
         >
 
         <TextView
+            android:id="@+id/tv_point_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1元提现说明"
@@ -56,6 +59,7 @@
             android:textSize="10sp" />
 
         <TextView
+            android:id="@+id/tv_point_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="连续登录3天的用户即可获得一次1元提现机会，提现后可利用签到重新获得提现机会"

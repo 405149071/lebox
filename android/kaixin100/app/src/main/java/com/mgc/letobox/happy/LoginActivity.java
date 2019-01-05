@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.kymjs.rxvolley.RxVolley;
+import com.ledong.lib.leto.LetoManager;
 import com.ledong.lib.leto.api.bean.LoginResultBean;
 import com.ledong.lib.leto.db.LoginControl;
 import com.ledong.lib.leto.model.LoginMobileRequestBean;
@@ -151,18 +152,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             public void onDataSuccess(LoginResultBean data) {
                 if (data != null) {
 //                    T.s(loginActivity,"登陆成功："+data.getCp_user_token());
-                    //接口回调通知
-//                    LoginControl.saveUserInfo(data.getCp_user_token(), account, data.getPublic_key());
                     LoginControl.setPortrait(data.getPortrait());   //保存头像到本地
                     //LoginControl.setAgentgame(data.getAgentgame());   //保存到本地
-                    //SdkConstant.HS_AGENT = data.getAgentgame();
                     LoginControl.setNickname(data.getNickname());   //保存到本地
                     LoginControl.saveUserToken(data.getUser_token());
                     LoginControl.setUserId(account);
-//                        LoginControl.setUserId(data.getMem_id());
-//                    LoginControl.setSnsAgentId(data.getIs_agent());
-//                    LoginControl.setSignature(data.getSignature());
-//                    onLoginSuccReward(data.getReward());
+
+                    LetoManager.getInstance().setUserId(account);
 
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);

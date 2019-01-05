@@ -162,13 +162,30 @@
             android:exported="true"
             android:process=":leto"
             android:screenOrientation="portrait"
+            android:configChanges="screenSize|keyboardHidden|orientation"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="com.ledong.lib.leto.main.WebPayActivity"
             android:exported="true"
             android:process=":leto"
             android:screenOrientation="portrait"
+            android:configChanges="screenSize|keyboardHidden|orientation"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name="com.ledong.lib.leto.main.WebViewActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:process=":leto"/>
+        <activity
+            android:name="com.ledong.lib.leto.login.MgcLoginActivity"
+            android:exported="true"
+            android:process=":leto"
+            android:screenOrientation="behind"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
 
         <!-- 适配android N 的文件系统，authorities 中注意替换您的包名，包名+".fileprovider" -->
         <provider

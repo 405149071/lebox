@@ -53,6 +53,7 @@ import com.mgc.letobox.happy.ui.recyclerview.BaseRecyclerAdapter;
 import com.mgc.letobox.happy.ui.signin.SignInItem;
 import com.mgc.letobox.happy.util.GsonUtil;
 import com.mgc.letobox.happy.util.Util;
+import com.mgc.letobox.happy.walfare.drawcash.BindAlipayActivity;
 import com.mgc.letobox.happy.walfare.drawcash.DrawCashActivity;
 import com.mgc.letobox.happy.walfare.invite.InviteActivity;
 import com.mgc.letobox.happy.walfare.lucky.LotteryActivity;
@@ -177,7 +178,7 @@ public class TabWalfareFragment extends Fragment implements SignInItem.ISignInLi
         smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                mPage=1;
+                mPage = 1;
                 getWalfares(mPage);
             }
         });
@@ -274,7 +275,6 @@ public class TabWalfareFragment extends Fragment implements SignInItem.ISignInLi
         };
         RxVolley.post(SdkApi.getWalfares(), httpParamsBuild.getHttpParams(), httpCallbackDecode);
     }
-
 
 
     public static void start(Context context) {
@@ -401,7 +401,9 @@ public class TabWalfareFragment extends Fragment implements SignInItem.ISignInLi
             @Override
             public void onFailure(String code, String msg) {
                 super.onFailure(code, msg);
-                T.s(getContext(), msg);
+                if (null != getActivity() && !getActivity().isDestroyed()) {
+                    T.s(getActivity(), msg);
+                }
 
             }
         };

@@ -103,6 +103,7 @@ public class TabProfileFragment extends AutoLazyFragment implements View.OnClick
                 break;
             case R.id.fl_exit:
                 LoginControl.clearLogin();
+                LoginActivity.goLogin(getContext());
                 getActivity().finish();
                 break;
         }

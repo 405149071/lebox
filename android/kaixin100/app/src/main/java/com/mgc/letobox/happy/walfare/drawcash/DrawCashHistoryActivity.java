@@ -93,7 +93,7 @@ public class DrawCashHistoryActivity extends BaseActivity implements View.OnClic
 
 
     private void initView(){
-        tv_title.setText("兑换记录");
+        tv_title.setText("提现记录");
         rl_left.setOnClickListener(this);
 
         iv_right.setVisibility(View.VISIBLE);

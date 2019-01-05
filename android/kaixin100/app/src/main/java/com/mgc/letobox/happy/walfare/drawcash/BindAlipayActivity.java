@@ -107,6 +107,9 @@ public class BindAlipayActivity  extends BaseActivity implements View.OnClickLis
             @Override
             public void onFailure(String code, String msg) {
                 super.onFailure(code, msg);
+                if (!BindAlipayActivity.this.isDestroyed()) {
+                    T.s(BindAlipayActivity.this, msg);
+                }
             }
         };
         httpCallbackDecode.setShowTs(false);

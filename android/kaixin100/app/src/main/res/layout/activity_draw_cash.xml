@@ -281,7 +281,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="80dp"
-                android:text="兑换记录"
+                android:text="提现记录"
                 android:textColor="@color/text_black"
                 android:textSize="14sp" />
 

@@ -823,8 +823,8 @@ public class SdkApi {
 
     //我的邀请统计数据
     public static String getInviteStatistic() {
-        printUrl("personal/shareStuCount");
-        return getRequestUrl() + "personal/shareStuCount";
+        printUrl("personal/shareStuCount_hz");
+        return getRequestUrl() + "personal/shareStuCount_hz";
     }
     //我的邀请记录
     public static String getMyInvite() {
