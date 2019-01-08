@@ -8,14 +8,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.jaeger.library.StatusBarUtil;
 import com.kymjs.rxvolley.RxVolley;
 import com.ledong.lib.leto.db.LoginControl;
+import com.ledong.lib.leto.main.WebViewActivity;
 import com.leto.game.base.bean.BaseRequestBean;
 import com.leto.game.base.http.HttpCallbackDecode;
 import com.leto.game.base.http.HttpParamsBuild;
-import com.mgc.letobox.happy.R;
 import com.mgc.letobox.happy.base.AutoLazyFragment;
 import com.mgc.letobox.happy.config.SdkApi;
 import com.mgc.letobox.happy.domain.HomeMgcPropertyResultBean;
@@ -23,7 +21,6 @@ import com.mgc.letobox.happy.game.HistoryGameActivity;
 import com.mgc.letobox.happy.util.GsonUtil;
 import com.mgc.letobox.happy.walfare.drawcash.DrawCashActivity;
 import com.mgc.letobox.happy.walfare.invite.InviteActivity;
-import com.mgc.letobox.happy.walfare.lucky.LotteryActivity;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
@@ -100,6 +97,9 @@ public class TabProfileFragment extends AutoLazyFragment implements View.OnClick
                 HistoryGameActivity.start(getContext());
                 break;
             case R.id.fl_read:
+
+                WebViewActivity.start(getContext(), "小说", SdkApi.novel_url, 4, 1, LetoApplication.getInstance().getAppId(), LetoApplication.getInstance().getAppId());
+
                 break;
             case R.id.fl_exit:
                 LoginControl.clearLogin();
