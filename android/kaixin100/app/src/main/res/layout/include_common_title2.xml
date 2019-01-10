@@ -38,7 +38,12 @@
         android:layout_centerInParent="true"
         android:text="@string/app_name"
         android:textColor="@color/text_black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginStart="@dimen/match_10"
+        android:layout_marginEnd="@dimen/match_10"
+        />
 
     <RelativeLayout
         android:layout_width="wrap_content"

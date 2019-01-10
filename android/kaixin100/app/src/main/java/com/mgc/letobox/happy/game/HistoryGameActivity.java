@@ -81,7 +81,6 @@ public class HistoryGameActivity extends BaseDownloadActivity implements IGameSw
         tvTitle.setText("我玩过的");
         getChargeMore();
 
-        MobclickAgent.openActivityDurationTrack(false);
         // 设置为U-APP场景
         MobclickAgent.setScenarioType(HistoryGameActivity.this, MobclickAgent.EScenarioType.E_UM_NORMAL);
 
