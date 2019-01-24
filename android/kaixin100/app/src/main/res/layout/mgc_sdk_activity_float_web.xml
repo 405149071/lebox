@@ -53,7 +53,7 @@
 			android:layout_marginLeft="5dip"
 			android:gravity="center"
 			android:src="@drawable/mgc_sdk_float_ic_action_cancel"
-			android:visibility="gone"/>
+			/>
 	
 	</RelativeLayout>
     <WebView

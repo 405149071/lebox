@@ -10,6 +10,8 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
@@ -88,6 +90,19 @@ public class TabReadFragment extends AutoLazyFragment implements IMgcListener {
 
         wv.loadUrl(mUrl);
 
+
+        iv_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = wv.getUrl();
+                Log.e(TAG, "当前页面的url=" + url);
+                if(wv.canGoBack()){
+                    wv.goBack();
+                }else{
+                    iv_return.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
     }
 
 
@@ -191,6 +206,16 @@ public class TabReadFragment extends AutoLazyFragment implements IMgcListener {
                         }
                     }
                 }
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(wv.canGoBack()){
+                            iv_return.setVisibility(View.VISIBLE);
+                        }else{
+                            iv_return.setVisibility(View.INVISIBLE);
+                        }
+                    }
+                });
                 return super.shouldInterceptRequest(view, url);
             }
 
@@ -220,8 +245,7 @@ public class TabReadFragment extends AutoLazyFragment implements IMgcListener {
                 if (!TextUtils.isEmpty(title)) {
                     tv_title.setText(title);
                 } else {
-
-                    tv_title.setText("小说");
+                    tv_title.setText("阅读");
 
                 }
             }
@@ -262,6 +286,16 @@ public class TabReadFragment extends AutoLazyFragment implements IMgcListener {
 
     @Override
     public void checkUser() {
+
+    }
+
+    @Override
+    public void syncUserInfo() {
+
+    }
+
+    @Override
+    public void verificationUser() {
 
     }
 }

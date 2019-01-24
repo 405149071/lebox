@@ -15,6 +15,7 @@
         android:layout_height="144dp"
         app:indicator_drawable_selected="@drawable/mgc_banner_white_radius"
         app:indicator_drawable_unselected="@drawable/mgc_banner_gray_radius"
+        app:delay_time="5000"
         />
 
     <LinearLayout

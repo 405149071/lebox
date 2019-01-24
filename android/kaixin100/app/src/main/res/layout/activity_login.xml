@@ -127,7 +127,7 @@
                 android:layout_below="@id/mgc_sdk_ll_loginInput"
 
                 android:layout_marginTop="45dp"
-                android:background="@drawable/leto_login_btn_background"
+                android:background="@drawable/login_btn_background"
                 android:gravity="center"
                 android:text="登录/一键注册"
                 android:textColor="@android:color/white"

@@ -21,7 +21,7 @@ public class SdkApi {
     public static String image_url_with_size = "?x-oss-process=image/resize,m_fixed,h_%d,w_%d";
 
 
-    public static String novel_url = "https://m-sxyj-net.oss-cn-qingdao.aliyuncs.com/WebResource/test.html";
+    public static String novel_url = "https://simple-reader.sxyj.net/menggongchang";
 
     public static String requestUrl;
 

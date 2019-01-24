@@ -3,6 +3,7 @@
     <string name="leto_app_name">leto</string>
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>
+    <string name="unknown">未知</string>
     <string name="leto_more_game">更多游戏</string>
     <string name="leto_minigame_clear_cache">清除缓存</string>
 

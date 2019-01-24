@@ -50,5 +50,5 @@ dependencies {
     // 上拉刷新组件
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
-    implementation files('libs/Leto-1.8.0.jar')
+    implementation files('libs/Leto-2.0.jar')
 }

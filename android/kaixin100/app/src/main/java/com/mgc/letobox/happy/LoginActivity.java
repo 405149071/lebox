@@ -10,23 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.kymjs.rxvolley.RxVolley;
-import com.ledong.lib.leto.LetoManager;
-import com.ledong.lib.leto.api.bean.LoginResultBean;
-import com.ledong.lib.leto.db.LoginControl;
-import com.ledong.lib.leto.model.LoginMobileRequestBean;
-import com.ledong.lib.leto.model.SmsSendRequestBean;
-import com.ledong.lib.leto.model.SmsSendResultBean;
+import com.ledong.lib.leto.interact.MgcLoginInteract;
+import com.ledong.lib.leto.login.SendSmsInteract;
 import com.ledong.lib.leto.utils.RegExpUtil;
-import com.leto.game.base.http.HttpCallbackDecode;
-import com.leto.game.base.http.HttpParamsBuild;
-import com.leto.game.base.http.SdkConstant;
 import com.liang530.log.T;
 import com.mgc.letobox.happy.base.BaseActivity;
-import com.mgc.letobox.happy.config.SdkApi;
 import com.mgc.letobox.happy.domain.RewardResultBean;
-import com.mgc.letobox.happy.util.GsonUtil;
-import com.mgc.letobox.happy.util.RxVolleyUtil;
 import com.umeng.analytics.MobclickAgent;
 
 import butterknife.BindView;
@@ -87,24 +76,18 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             T.s(this, "请输入正确的手机号");
             return;
         }
-        SmsSendRequestBean smsSendRequestBean = new SmsSendRequestBean();
-        smsSendRequestBean.setMobile(account);
-        smsSendRequestBean.setSmstype( SmsSendRequestBean.TYPE_LOGIN);
-        HttpParamsBuild httpParamsBuild = new HttpParamsBuild(GsonUtil.getGson().toJson(smsSendRequestBean));
-        HttpCallbackDecode httpCallbackDecode = new HttpCallbackDecode<SmsSendResultBean>(this, httpParamsBuild.getAuthkey()) {
+
+        SendSmsInteract.sendSMS(LoginActivity.this, account, new SendSmsInteract.SendSmsListener() {
             @Override
-            public void onDataSuccess(SmsSendResultBean data) {
-                if (data != null) {
-                    //开始计时控件
-                    startCodeTime(sms_time);
-                }
+            public void onSuccess() {
+                startCodeTime(120);
             }
-        };
-        httpCallbackDecode.setShowTs(true);
-        httpCallbackDecode.setLoadingCancel(false);
-        httpCallbackDecode.setShowLoading(true);
-        httpCallbackDecode.setLoadMsg("发送中...");
-        RxVolley.post(SdkApi.getSmsSend(), httpParamsBuild.getHttpParams(), httpCallbackDecode);
+
+            @Override
+            public void onFail(String code, String message) {
+
+            }
+        });
     }
 
     Handler handler = new Handler();
@@ -142,53 +125,19 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             return;
         }
 
-        LoginMobileRequestBean loginMobileRequestBean = new LoginMobileRequestBean();
-        loginMobileRequestBean.setMobile(account);
-        loginMobileRequestBean.setSmscode(authCode);
-        loginMobileRequestBean.setSmstype(SmsSendRequestBean.TYPE_LOGIN);
-        HttpParamsBuild httpParamsBuild = new HttpParamsBuild(GsonUtil.getGson().toJson(loginMobileRequestBean));
-        HttpCallbackDecode httpCallbackDecode = new HttpCallbackDecode<LoginResultBean>(this, httpParamsBuild.getAuthkey()) {
+        MgcLoginInteract.submitLogin(LoginActivity.this, account, authCode, new MgcLoginInteract.LoginListener() {
             @Override
-            public void onDataSuccess(LoginResultBean data) {
-                if (data != null) {
-//                    T.s(loginActivity,"登陆成功："+data.getCp_user_token());
-                    LoginControl.setPortrait(data.getPortrait());   //保存头像到本地
-                    //LoginControl.setAgentgame(data.getAgentgame());   //保存到本地
-                    LoginControl.setNickname(data.getNickname());   //保存到本地
-                    LoginControl.saveUserToken(data.getUser_token());
-                    LoginControl.setUserId(account);
-
-                    LetoManager.getInstance().setUserId(account);
-
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+            public void onSuccess() {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
+
             @Override
-            public void onFailure(String code, String message){
+            public void onFail(String code, String message) {
                 Log.i(TAG, message);
             }
-        };
-        httpCallbackDecode.setShowTs(true);
-        httpCallbackDecode.setLoadingCancel(false);
-        httpCallbackDecode.setShowLoading(true);
-        httpCallbackDecode.setLoadMsg("登录中...");
-        new RxVolleyUtil().post(SdkApi.getLoginRegister(), httpParamsBuild.getHttpParams(), httpCallbackDecode);
-
-    }
-
-    public void onLoginSucc() {
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        intent.putExtra(MainActivity.EXTRA_HIDE_SPLASH, true);
-        startActivity(intent);
-        finish();
-    }
-
-    public void onLoginSuccReward(RewardResultBean data) {
-        rewardResultBean = data;
-        SdkConstant.MGC_AGENT = LoginControl.getAgentgame();
-        SdkConstant.userToken = LoginControl.getUserToken();
+        });
     }
 
     public static void goLogin(Context context){
